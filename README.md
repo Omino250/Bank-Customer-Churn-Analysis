@@ -4,7 +4,7 @@
 
 ---
 
-## The 30-Second Version
+## Project Overview
 
 A retail bank was quietly bleeding customers — 1 in 5, to be exact. I dug into 10,000 customer records to find out who was leaving, why, and whether it could be caught before the account closed. It could. I built a Random Forest classifier that flags at-risk customers with 84% discriminative power, tuned it to catch 59% of churners in advance, and packaged the whole thing into a 3-page Power BI dashboard that hands retention teams a live, prioritized rescue list.
 
@@ -51,7 +51,7 @@ Once the data was in, the scale of the problem became concrete fast: a **20.38% 
 
 ---
 
-## The Workflow (Including the Parts That Broke)
+## The Workflow
 
 Most project write-ups skip the messy middle. I'm keeping it in, because the setbacks shaped the final model as much as the clean wins did.
 
@@ -180,7 +180,8 @@ That combination — catching 6 in 10 departing customers while only flagging 11
 A model sitting in a notebook doesn't save anyone's account. The three dashboard pages below are what actually gets opened every morning.
 
 ### Page 1 — Customer Overview
-*[Visual: Screenshot of KPI cards, geography map, credit score donut, tenure-vs-points chart]*
+<img width="1059" height="598" alt="image" src="https://github.com/user-attachments/assets/ab46700c-11df-4560-be3c-3f331d641b1a" />
+
 
 **What happened:** The portfolio holds 10,000 accounts, $764.86M in total deposits, and a 51.51% active engagement rate. France anchors over half of total volume. Nearly 70% of customers carry a "Good" credit score. Reward points are flat across every tenure bracket.
 
@@ -189,7 +190,8 @@ A model sitting in a notebook doesn't save anyone's account. The three dashboard
 **What to do next:** Use this page as the baseline reference point in every retention review — it's the "before" picture the churn numbers should be measured against.
 
 ### Page 2 — Historical Churn Analysis
-*[Visual: Screenshot of age-group bar chart, geography churn map, product-holding chart, complaint correlation]*
+<img width="1064" height="598" alt="image" src="https://github.com/user-attachments/assets/6d4a6cc2-4a41-4668-9511-6f0354b01fb3" />
+
 
 **What happened:** 2,038 accounts churned — a 20.38% rate — for a $185.68M capital loss, at an average lost balance of $91.11K per account (above the portfolio average). Germany (814 accounts, 39.94%) and France (811 accounts, 39.79%) together account for roughly 80% of total churn volume. The 41–60 age group drives 60.65% of exits. 99.80% of churned customers had a logged complaint.
 
@@ -198,7 +200,8 @@ A model sitting in a notebook doesn't save anyone's account. The three dashboard
 **What to do next:** Treat Germany as its own retention project, not a line item in a global campaign. Route dedicated budget and a root-cause investigation (pricing, local competition, service quality) specifically at the German book. Simultaneously, since France carries the largest absolute volume, even a modest improvement in French retention outperforms an equivalent effort anywhere else in the portfolio.
 
 ### Page 3 — Churn Prediction & Risk Pipeline
-*[Visual: Screenshot of risk pipeline funnel, decomposition tree, operational rescue list table]*
+<img width="1057" height="593" alt="image" src="https://github.com/user-attachments/assets/427a341e-2140-408d-b3ea-2251449740fe" />
+
 
 **What happened:** The model currently flags **191 active accounts** — $17.33M in deposits — as at risk, split into a Medium Risk cohort (149 accounts) and a High Risk cohort (42 accounts, the top 28.2% requiring immediate action). Drilling into the decomposition tree: 136 of the 191 (71.2%) are aged 41–60. Of those, 77 are inactive. Of those 77, **53 hold a "Good" credit score.**
 

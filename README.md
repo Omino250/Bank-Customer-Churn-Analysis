@@ -259,4 +259,3 @@ Open `reports/bank_churn_dashboard.pbix` in Power BI Desktop to explore the inte
 
 ---
 
-*If you're a hiring manager reading this: the part I'm most proud of isn't the 0.84 AUC — it's catching the `Complain` leakage before it shipped. A model that's 99% accurate for the wrong reason is worse than one that's 85% accurate for the right ones.*

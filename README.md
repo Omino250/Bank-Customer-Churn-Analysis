@@ -193,7 +193,8 @@ Documents historical losses of 2,038 accounts ($185.68M capital lost, averaging 
 
 ### Page 3 - Churn Prediction & Risk Pipeline
 Translates model probability outputs into operational targets.
-![Uploading image.png…]()
+<img width="1031" height="590" alt="image" src="https://github.com/user-attachments/assets/8e086c00-9159-4017-adc2-9254b669b7c1" />
+
 
 
 **Key Insights:**

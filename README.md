@@ -4,7 +4,7 @@
 
 ---
 
-## The 30-Second Version
+## Introduction
 
 A retail bank was quietly bleeding customers, specifically 1 in 5. I analyzed 10,000 customer records to determine who was leaving, why, and whether we could catch them before their accounts closed. 
 
@@ -168,12 +168,35 @@ The top features account for the vast majority of the model's decisions, alignin
 
 ### Page 1 - Customer Overview
 Establishes baseline portfolio metrics across 10,000 accounts, $764.86M in deposits, and credit tier distributions. Demonstrates that overall portfolio credit quality is high, emphasizing the need to preserve high-value accounts.
+<img width="999" height="575" alt="image" src="https://github.com/user-attachments/assets/f8ddad82-23fb-49ab-adde-cce46b854f86" />
+
+**Key Insights:**
+
+- 🎁 **Loyalty Flaw:** Tenure has zero correlation with reward points accumulated, meaning long-term clients are not being incentivized to stay.
+- 🌐 **Market Exposure:** France holds over 50% of total customers (5,000 accounts), making it the primary regional revenue driver.
+- 💳 **Credit Stability:** Nearly 70% of clients maintain a "Good" credit rating, indicating low baseline portfolio risk.
+- 💰 **Capital Anchor:** $764.86M in total balances across 10,000 accounts ($76.5K average balance per client).
+
+
 
 ### Page 2 - Historical Churn Analysis
 Documents historical losses of 2,038 accounts ($185.68M capital lost, averaging $91.11K per departed account). Highlights regional concentrations in Germany (39.94% of churn) and France (39.79% of churn), establishing Germany as a high-churn-rate market relative to its customer base.
+<img width="994" height="578" alt="image" src="https://github.com/user-attachments/assets/dbf22b57-d773-477d-87c8-f8f89171e72f" />
+
+**Key Insights:**
+
+- 💸 **Capital Drain:** $185.68M in total balance lost across 2,038 churned users, averaging a massive $91.11K per departed account.
+- ⚠️ **Complaint Trigger:** 99.80% of departed clients filed an official complaint prior to leaving, making unresolved service issues the core churn driver.
+- 🎯 **Age Vulnerability:** The 41–60 age bracket drives the highest risk volume by far, accounting for 1,236 total exits (over 60% of total churn).
+- 🌐 **Regional Hotspots:** Germany (39.94%) and France (39.79%) suffer the vast majority of customer losses, making up nearly 80% of total churn.
+- 📦 **Single-Product Risk:** Exit rates peak heavily among single-product holders, proving multi-product adoption is essential for account stickiness.
 
 ### Page 3 - Churn Prediction & Risk Pipeline
-Translates model probability outputs into operational targets:
+Translates model probability outputs into operational targets.
+<img width="959" height="545" alt="image" src="https://github.com/user-attachments/assets/f147695e-5d76-49c8-9a4f-5fd4516ee777" />
+
+**Key Insights:**
+
 - **Capital at Risk:** **$73.75M** in balance vulnerable across **798 flagged accounts** (11.1% of portfolio) at the 0.2909 decision threshold.
 - **Age Vulnerability:** The **41-60 age bracket** accounts for **72.8%** (581 of 798) of total churn risk, with inactive clients driving the majority of potential attrition (331 inactive accounts).
 - **Operational Rescue List:** Filters high-risk accounts (sorted by individual probability up to 91%) concentrated in Germany and Spain among single-product holders for immediate outreach.
@@ -191,3 +214,32 @@ Translates model probability outputs into operational targets:
 ---
 
 ## Repository Structure
+├── data/
+│   ├── raw_bank_data.csv
+│   └── bank_churn_scored_secure.csv
+├── notebooks/
+│   ├── 01_data_cleaning_eda.ipynb
+│   └── 02_model_training_evaluation.ipynb
+├── reports/
+│   └── bank_churn_dashboard.pbix
+├── README.md
+└── requirements.txt
+## How to Run This Project
+
+**1. Clone the repository**
+```bash
+git clone [https://github.com/yourusername/bank-churn-prediction.git](https://github.com/yourusername/bank-churn-prediction.git)
+
+**2. Install Python dependencies**
+
+```bash
+pip install -r requirements.txt
+
+**3. Run the model pipeline**
+Execute the notebooks in `notebooks/` in order:
+* `01_data_cleaning_eda.ipynb` for data cleaning, feature engineering, and exploratory analysis.
+* `02_model_training_evaluation.ipynb` for XGBoost training, leakage removal, `RandomizedSearchCV` hyperparameter tuning, and 0.2909 threshold optimization.
+
+**4. Open the dashboard**
+Open `reports/bank_churn_dashboard.pbix` in Power BI Desktop to view the interactive report, decomposition tree, and Operational Rescue List.
+

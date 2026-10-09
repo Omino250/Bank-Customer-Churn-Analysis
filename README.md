@@ -226,16 +226,20 @@ Translates model probability outputs into operational targets.
 └── requirements.txt
 ## How to Run This Project
 
+## How to Run This Project
+
 **1. Clone the repository**
 ```bash
 git clone [https://github.com/yourusername/bank-churn-prediction.git](https://github.com/yourusername/bank-churn-prediction.git)
+```
 
 **2. Install Python dependencies**
-
 ```bash
-pip install -r requirements.txt
+2. Install Python dependencies
+```
 
 **3. Run the model pipeline**
+
 Execute the notebooks in `notebooks/` in order:
 * `01_data_cleaning_eda.ipynb` for data cleaning, feature engineering, and exploratory analysis.
 * `02_model_training_evaluation.ipynb` for XGBoost training, leakage removal, `RandomizedSearchCV` hyperparameter tuning, and 0.2909 threshold optimization.

@@ -232,7 +232,7 @@ Translates model probability outputs into operational targets.
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/yourusername/bank-churn-prediction.git](https://github.com/yourusername/bank-churn-prediction.git)
+git clone [https://github.com/yourusername/bank-churn-prediction.git](https://github.com/Omino250/Bank-Customer-Churn-Analysis.git)
 ```
 
 **2. Install Python dependencies**

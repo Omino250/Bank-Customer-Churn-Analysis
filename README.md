@@ -4,7 +4,7 @@
 
 ---
 
-## Introduction
+## 🎯 Project Overview
 
 A retail bank was quietly bleeding customers, specifically 1 in 5. I analyzed 10,000 customer records to determine who was leaving, why, and whether we could catch them before their accounts closed. 
 
